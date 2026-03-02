@@ -1,3 +1,3 @@
 <x-layout>
-    <p>Home page</p>
+    <p>DashBoard</p>
 </x-layout>
