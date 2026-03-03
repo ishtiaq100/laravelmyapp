@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -33,6 +35,27 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    
+    Route::resource('ideas', IdeaController::class);
+
+    // Steps (nested under ideas)
+    Route::post('/ideas/{idea}/steps', [IdeaController::class, 'storeStep'])
+        ->name('ideas.steps.store');
+
+    Route::patch('/steps/{step}', [IdeaController::class, 'updateStep'])
+        ->name('steps.update');
+
+    Route::delete('/steps/{step}', [IdeaController::class, 'destroyStep'])
+        ->name('steps.destroy');
+    
+    
+    
+    
+    
+    
+    
+    
     Route::post('/logout', [SessionsController::class, 'destroy'])
     ->name('logout');
 

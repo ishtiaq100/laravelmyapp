@@ -33,6 +33,10 @@
                        class="pb-1 {{ request()->is('dashboard') ? 'text-indigo-600 border-b-2 border-indigo-600' : 'text-gray-600 hover:text-indigo-600' }}">
                         Dashboard
                     </a>
+                     <a href="{{ url('/ideas') }}"
+                       class="pb-1 {{ request()->is('ideas') ? 'text-indigo-600 border-b-2 border-indigo-600' : 'text-gray-600 hover:text-indigo-600' }}">
+                        Ideas
+                    </a>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

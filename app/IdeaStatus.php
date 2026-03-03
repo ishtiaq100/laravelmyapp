@@ -12,7 +12,7 @@ enum IdeaStatus: string
         return match($this){
             self::PENDING => 'Pending',
             self::IN_PROGRESS => 'In Progress',
-            self::PENDING => 'Completed',
-        }
+            self::PENDING => 'Completed'
+        };
     }
 }
